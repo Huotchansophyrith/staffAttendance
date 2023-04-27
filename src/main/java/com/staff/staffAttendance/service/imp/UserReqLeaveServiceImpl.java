@@ -62,6 +62,7 @@ public class UserReqLeaveServiceImpl implements UserReqLeaveService {
         int userSeq = userMapper.getUserByUsername(userLoginName); // get user's seq by comparing username in database
         userReqLeaveDto.setUserId(userSeq);
         this.userReqLeaveMapper.create(userReqLeaveDto);
+//        return new ResponseDTO(CREATE_SUCCESS);
         return new ResponseDTO(CREATE_SUCCESS);
     }
     
