@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{user-index}">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Management</title>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header mt-5">
+            <h1> Add Attendance</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Attendance Management</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Add</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="staff">Staff Name</label><span class="required"></span>
+                                <select class="form-control select2" name="staff" id="staff" data-placeholder="Please select staff.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="staffNum">Staff Number</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="staffNum" id="staffNum" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6" hidden>
+                            <div class="form-group">
+                                <label for="userId">User Id</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="userId" id="userId">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="attnType">Attendance Type</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="attnType" id="attnType">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="currentDate">DateTime</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="currentDate" id="currentDate" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <button th:if="${action != 'update'}" type="submit" id="create" class="btn btn-primary"
+                                    style="" data-btn="save">Save
+                            </button>
+                            <button th:if="${action == 'update'}" type="submit" id="update" class="btn btn-primary"
+                                    style="" data-btn="save">Update
+                            </button>
+                            <button onclick="document.location='/attn'" class="btn btn-dark" data-btn="cancel">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/pages/attendance/create-update.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let currentUser = /*[[${currentUser}]]*/ 'currentUser';
+        let attnId = /*[[${attnId}]]*/ 'attnId';
+        console.log(currentUser)
+        /*]]>*/
+    </script>
+</th:block>
+</body>
+</html>

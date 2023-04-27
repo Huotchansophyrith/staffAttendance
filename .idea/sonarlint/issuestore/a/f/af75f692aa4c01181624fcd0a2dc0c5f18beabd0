@@ -1,0 +1,20 @@
+
+l	java:S116"WRename this field "FIND_SUCCESS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÉ¾÷
+n	java:S116"YRename this field "CREATE_SUCCESS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨Í¬»
+n	java:S116"YRename this field "UPDATE_SUCCESS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤´Õë
+f	java:S116"QRename this field "DELETE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õø£²
+k	java:S116"QRename this field "EXSITS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñü©ıÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(õÉ¾÷
+7
+java:S1170"!Make this final field static too.(¨Í¬»
+7
+java:S1170"!Make this final field static too.(¤´Õë
+7
+java:S1170"!Make this final field static too.(õø£²
+<
+java:S1170"!Make this final field static too.(ñü©ıÿÿÿÿ
+J
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ
+f	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒó«Î
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–¤†Øşÿÿÿÿ

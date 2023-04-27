@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Management</title>
+    <style>
+        input#profile_img {
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header mt-5">
+            <h1> Add New Staff</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Staff Management</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Add</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="fullName">Staff Name</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="fullName" id="fullName" th:value="${staffId != null ? staffId.full_name : ''}"
+                                           placeholder="Enter Staff Name">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="staffNum">Staff Number</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="staffNum" id="staffNum" th:value="${staffId != null ? staffId.staff_number : ''}"
+                                           placeholder="Enter Staff Number">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="age">Age</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="age" id="age" th:value="${staffId != null ? staffId.age : ''}"
+                                           placeholder="Enter Staff age">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control select2" name="gender" id="gender" data-placeholder="Please select gender.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                    <option value="0">Male</option>
+                                    <option value="1">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Profile Image</label>
+                                <div class="custom-file input-group">
+                                    <input type="file" class="custom-file-input" id="proImg" accept="application/pdf, application/msword,
+                                             application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+                                             application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+                                             application/vnd.ms-excel, .png, .jpeg,">
+                                    <label class="custom-file-label" id="imgFile" for="proImg">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Email</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="email" class="form-control" name="email" id="email" th:value="${staffId != null ? staffId.email : ''}"
+                                           placeholder="Enter email">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Phone</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="phone" id="phone" th:value="${staffId != null ? staffId.phone : ''}"
+                                           placeholder="Enter phone number">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="position">Position</label>
+                                <select class="form-control select2" name="position" id="position" data-placeholder="Please select position.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="department">Department</label>
+                                <select class="form-control select2" name="department" id="department" data-placeholder="Please select department.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="branch">Branch</label>
+                                <select class="form-control select2" name="branch" id="branch" data-placeholder="Please select branch.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <button th:if="${action != 'update'}" type="submit" id="create" class="btn btn-primary"
+                                    style="" data-btn="save">Save
+                            </button>
+                            <button th:if="${action == 'update'}" type="submit" id="update" class="btn btn-primary"
+                                    style="" data-btn="save">Update
+                            </button>
+                            <button onclick="document.location='/staffs'" class="btn btn-dark" data-btn="cancel">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/pages/staff/create-update.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let staffId = /*[[${staffId}]]*/ 'staffId';
+        let allName = /*[[${allName}]]*/ 'allName';
+        let currentUser = /*[[${currentUser}]]*/ 'currentUser';
+        // console.log(comId)
+        // console.log(brName)
+        // console.log(allName)
+        console.log(currentUser)
+        /*]]>*/
+    </script>
+</th:block>
+
+</body>
+</html>

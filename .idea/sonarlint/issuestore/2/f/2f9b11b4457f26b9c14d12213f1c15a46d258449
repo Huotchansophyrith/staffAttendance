@@ -1,0 +1,11 @@
+
+d
+java:S1192"IDefine a constant instead of duplicating this literal "departOp" 3 times.(ê•·®ûÿÿÿÿ
+`
+java:S1192"JDefine a constant instead of duplicating this literal "menu-open" 6 times.(áÕŠÆ
+]
+java:S1192"GDefine a constant instead of duplicating this literal "active" 3 times.(ÒÀ¡
+_
+java:S1192"IDefine a constant instead of duplicating this literal "teamOpen" 3 times.(áÕŠÆ
+k	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«ˆ¦Ïşÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ú‘ÖĞ

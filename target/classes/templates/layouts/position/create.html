@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}"
+      th:with="dataTables=true,tree=true">
+<head>
+    <meta charset="UTF-8">
+    <title> Position Management</title>
+    <style>
+        .size-box {
+            line-height: 1.2;
+        }
+    </style>
+
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header mt-5">
+            <h1> Add Position</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Position Management</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Add</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="posName">Position Name</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="posName" id="posName" th:value="${posId != null ? posId.posName : '' }"
+                                           placeholder="Enter Position Name" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <div class="input-group">
+                                        <textarea class="form-control" name="description" th:text="${posId != null ? posId.description : '' }"
+                                                  id="description" rows="5">
+                                        </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <button th:if="${action == 'update'}" type="submit" class="btn btn-primary" id="update" data-btn="update">Update</button>
+                            <button th:if="${action != 'update'}" type="submit" class="btn btn-primary" id="create" style="" data-btn="save">Save</button>
+                            <button onclick="document.location='/positions'" class="btn btn-dark" data-btn="cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/pages/position/create-update.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let posId = /*[[${posId}]]*/ 'posId';
+        // console.log(posId);
+        /*]]>*/
+    </script>
+</th:block>
+
+</body>
+</html>

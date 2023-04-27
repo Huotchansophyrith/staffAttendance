@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Management</title>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header mt-5">
+            <div class="container-fluid">
+                <h1>Report Attendance List </h1>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">Report Attendance Management</li>
+                    <li class="breadcrumb-item active">List</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="container-fluid filter">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="staffId">Staff</label>
+                        <select class="form-control select2 selectApi" id="staffId" name="staffId"
+                                data-placeholder="Select a Staff Name"
+                                style="width: 100%;">
+                            <option selected value=""></option>
+                            <option value=" ">none</option>
+<!--                            <option th:each="staff: ${staff}"-->
+<!--                                    th:value="${staff.staffUsername}"-->
+<!--                                    th:attr="data-id=${staff.staffUsername}"-->
+<!--                                    th:text="${staff.staffUsername}"></option>-->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="month">Select Month:</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="month" id="month" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4" style="text-align: center">
+                    <button type="submit" class="btn btn-primary" id="fltSearch">Search</button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </section>
+
+        <section class="content mt-5">
+            <h3 align="center">Daily Report Attendance</h3>
+            <div class="card card-info">
+                <div class="card-body">
+                    <table id="data-table" class="table table-striped table-bordered display"
+                           style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Staff Name</th>
+                            <th>Staff Number</th>
+                            <th>Date</th>
+                            <th>User Name</th>
+                            <th>Create By</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!--<script type="text/javascript" layout:fragment="script" th:src="@{/js/pages/attendance/list.js}"></script>-->
+
+</body>
+</html>

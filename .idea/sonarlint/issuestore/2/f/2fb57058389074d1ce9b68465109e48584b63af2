@@ -1,0 +1,6 @@
+
+_
+java:S2441:"=Make "UserDto" serializable or don't store it in the session.(£™Õàûÿÿÿÿ8ëòßöî0
+w
+java:S1488;"\Immediately return this expression instead of assigning it to the temporary variable "auth".(ªìé×øÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…ÖÜ¦ûÿÿÿÿ

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Management</title>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header mt-5">
+            <h1> Add Company</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Company Management</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Add</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="companyName">Company Name</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="companyName" id="companyName" th:value="${comId != null ? comId.company_name : ''}"
+                                           placeholder="Enter Company Name">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Short Name</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="shortName" id="shortName" th:value="${comId != null ? comId.company_short_name : ''}"
+                                           placeholder="Enter ShortName">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="branch">Branch</label>
+                                <select class="form-control select2" name="branch" id="branch" data-placeholder="Please select branch.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="description" id="description" th:value="${comId != null ? comId.description : ''}">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-phone-square-alt"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <button th:if="${action != 'update'}" type="submit" id="create" class="btn btn-primary"
+                                    style="" data-btn="save">Save
+                            </button>
+                            <button th:if="${action == 'update'}" type="submit" id="update" class="btn btn-primary"
+                                    style="" data-btn="save">Update
+                            </button>
+                            <button onclick="document.location='/company'" class="btn btn-dark" data-btn="cancel">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/pages/company/create-update.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let comId = /*[[${comId}]]*/ 'comId';
+        let brName = /*[[${brName}]]*/ 'brName';
+        let currentUser = /*[[${currentUser}]]*/ 'currentUser';
+        // console.log(comId)
+        // console.log(brName)
+        /*]]>*/
+    </script>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+u	java:S116"TRename this field "staff_seq" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÜæÁüÿÿÿÿ8®×Ÿ÷î0
+r	java:S116"WRename this field "staff_number" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉÈ¤8¯×Ÿ÷î0
+p	java:S116"TRename this field "full_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®š¬Í8¯×Ÿ÷î0
+w	java:S116"VRename this field "profile_img" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰ŒŞíüÿÿÿÿ8¯×Ÿ÷î0
+|	java:S116"[Rename this field "profile_img_path" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±†’”üÿÿÿÿ8¯×Ÿ÷î0
+u	java:S116"YRename this field "account_status" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸²¶ó8¯×Ÿ÷î0
+r	java:S116"QRename this field "pos_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·Ûø¬ûÿÿÿÿ8¯×Ÿ÷î0
+u	java:S116"TRename this field "branch_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÌëüÿÿÿÿ8°×Ÿ÷î0
+y	java:S116"XRename this field "department_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Äı…ıÿÿÿÿ8°×Ÿ÷î0
+m	java:S116"QRename this field "adm_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ñü¼8°×Ÿ÷î0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( Õğ„8·×Ÿ÷î0

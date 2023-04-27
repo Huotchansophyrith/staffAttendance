@@ -1,0 +1,7 @@
+
+s	java:S116"RRename this field "adm_seq" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦¶ëƒúÿÿÿÿ8µ€ ÷î0
+p	java:S116"TRename this field "full_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®š¬Í8µ€ ÷î0
+p	java:S116"TRename this field "create_at" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘šËŒ8¶€ ÷î0
+p	java:S116"TRename this field "update_at" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñ¸Í÷8¶€ ÷î0
+r	java:S116"VRename this field "login_count" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ¬¯¼8¶€ ÷î0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( Õð„8½€ ÷î0

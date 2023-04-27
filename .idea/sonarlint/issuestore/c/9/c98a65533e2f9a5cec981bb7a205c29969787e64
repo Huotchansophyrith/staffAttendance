@@ -1,0 +1,22 @@
+
+a
+java:S1128"DRemove this unused import 'com.staff.staffAttendance.dto.BranchDto'.(•°üì8…‰•è0
+d
+java:S1128"BRemove this unused import 'com.staff.staffAttendance.dto.UserDto'.(–Ï•Âûÿÿÿÿ8…‰•è0
+l
+java:S1128"JRemove this unused import 'com.staff.staffAttendance.mapper.BranchMapper'.(áâ‡×ùÿÿÿÿ8…‰•è0
+j
+java:S1128
+"HRemove this unused import 'com.staff.staffAttendance.mapper.UserMapper'.(Æƒáˆşÿÿÿÿ8…‰•è0
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8†‰•è0
+`
+java:S1192""JDefine a constant instead of duplicating this literal "menu-open" 6 times.(áÕŠÆ
+]
+java:S1192$"GDefine a constant instead of duplicating this literal "active" 3 times.(ÒÀ¡
+a
+java:S1192#"FDefine a constant instead of duplicating this literal "posOp" 3 times.(¹ŞÅ­ûÿÿÿÿ
+_
+java:S1192""IDefine a constant instead of duplicating this literal "teamOpen" 3 times.(áÕŠÆ
+e	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ÛŒU
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ú‘ÖĞ

@@ -1,0 +1,15 @@
+
+X	java:S1254"<This block of commented-out lines of code should be removed.(¶©à€8Üµ³øí0
+j
+java:S1128"MRemove this unused import 'org.springframework.security.core.Authentication'.(ñıÓ“8Üµ³øí0
+y
+java:S1128"\Remove this unused import 'org.springframework.security.core.context.SecurityContextHolder'.(ŒÄæë8İµ³øí0
+g
+java:S1192"JDefine a constant instead of duplicating this literal "menu-open" 6 times.(áÕŠÆ8İµ³øí0
+i
+java:S1192"GDefine a constant instead of duplicating this literal "userOp" 3 times.(¦ìÎËùÿÿÿÿ8Şµ³øí0
+d
+java:S1192"GDefine a constant instead of duplicating this literal "active" 3 times.(ÒÀ¡8Şµ³øí0
+f
+java:S1192"IDefine a constant instead of duplicating this literal "teamOpen" 3 times.(áÕŠÆ8Şµ³øí0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ú‘ÖĞ8ßµ³øí0

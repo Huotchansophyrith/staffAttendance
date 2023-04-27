@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.staff.staffAttendance.mapper.StaffMapper">
+
+    <resultMap type="staffDto" id="staffResult">
+        <id property="staff_seq" column="staff_seq"/>
+        <result property="staff_number" column="staff_number"/>
+        <result property="full_name" column="full_name"/>
+        <result property="age" column="age"/>
+        <result property="gender" column="gender"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+        <result property="profile_img" column="profile_img"/>
+        <result property="profile_img_path" column="profile_img_path"/>
+        <result property="account_status" column="account_status"/>
+        <result property="pos_id" column="pos_id"/>
+        <result property="branch_id" column="branch_id"/>
+        <result property="department_id" column="department_id"/>
+        <result property="adm_id" column="adm_id"/>
+        <result property="enabled" column="enabled"/>
+    </resultMap>
+
+</mapper>

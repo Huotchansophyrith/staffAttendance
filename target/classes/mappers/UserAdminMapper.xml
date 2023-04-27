@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.staff.staffAttendance.mapper.UserAdMapper">
+
+    <resultMap type="userAdDto" id="userAdResult">
+        <id property="adm_seq" column="adm_seq"/>
+        <result property="full_name" column="full_name"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="create_at" column="create_at"/>
+        <result property="update_at" column="update_at"/>
+        <result property="login_count" column="login_count"/>
+        <result property="enabled" column="enabled"/>
+    </resultMap>
+
+</mapper>

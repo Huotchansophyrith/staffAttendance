@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="SHORTCUT ICON" th:href="@{/dist/img/check-staff.png}" />
+    <th:block th:replace="fragments/styles"></th:block>
+    <th:block layout:fragment="style"></th:block>
+    <title layout:title-pattern="$LAYOUT_TITLE"></title>
+    <meta name="ctx" th:content="${#httpServletRequest.getContextPath()}" />
+    <style>
+    .country-flag{
+      width: 45px;
+      height: 30px;
+      margin-right: 20px;
+      /*display: none; !* Not to be displayed until needed.*!*/
+    }
+  </style>
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+<div class="wrapper">
+    <header class="main-header" th:replace="fragments/header"></header>
+    <aside th:replace="fragments/user-menu"></aside>
+    <div class="wrapper" layout:fragment="content">
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Dashboard</h1>
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <!--                  <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>-->
+                                <span class="info-box-icon bg-info"><i class="far fa-thin fa-bell"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Notification</span>
+                                    <span class="info-box-number">1,410</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-success"><i class="far fa-regular fa-user"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Active Staff</span>
+                                    <span class="info-box-number">410</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-warning"><i class="far fas fa-users"></i></span>
+                                <!--                  <i class="fa-thin fa-users"></i>-->
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Report</span>
+                                    <span class="info-box-number">13,648</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Likes</span>
+                                    <span class="info-box-number">93,139</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+
+    <footer class="main-footer" th:replace="fragments/footer"></footer>
+
+</div>
+<!-- ./wrapper -->
+
+<th:block th:replace="fragments/scripts"></th:block>
+<th:block layout:fragment="script"></th:block>
+
+</body>
+</html>

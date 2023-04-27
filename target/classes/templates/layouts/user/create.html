@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header mt-5">
+            <h1> Add New User</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item"> User Management</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Add</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label><span class="required"></span>
+                                <div class="input-group">
+                                    <input type="text" name="fullName" id="fullName" class="form-control" th:value="${userId != null ? userId.fullName : ''}"
+                                           placeholder="Enter Full Name">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="username">User Name</label><span class="required"></span>
+                                <div class="input-group">
+                                    <input type="text" name="username" id="username" class="form-control" th:value="${userId != null ? userId.username : ''}"
+                                           placeholder="Enter User Name">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="userNum">User Number(ID)</label><span class="required"></span>
+                                <div class="input-group">
+                                    <input type="text" name="userNum" id="userNum" class="form-control" th:value="${userId != null ? userId.userNum : ''}"
+                                           placeholder="Enter User Number">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="pwd">Password</label><span class="required"></span>
+                                <div class="input-group">
+                                    <input type="password" name="pwd" id="pwd" th:value="${userId != null ? userId.password : ''}"
+                                           class="form-control" placeholder="Enter Password">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="confPwd">Confirm Password</label><span class="required"></span>
+                                <div class="input-group">
+                                    <input type="password" name="confPwd" id="confPwd" class="form-control"
+                                           placeholder="Enter Confirm Password">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="age" id="age" th:value="${userId != null ? userId.age : ''}"
+                                           placeholder="Enter user age">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control select2" name="gender" id="gender" data-placeholder="Please select gender.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                    <option value="0"><span>Male</span> </option>
+                                    <option value="1"><span>Female</span></option>
+
+                                     <option th:if="${action == 'update'}"
+                                               th:value="${userId != null ? userId.gender : ''}"
+                                               th:text="${userId.gender == 1} ?  'Female' : 'Male'" selected>
+                                     </option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Profile Image</label>
+                                <div class="custom-file input-group">
+                                    <input type="file" class="custom-file-input" id="proImg" accept="application/pdf, application/msword,
+                                             application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+                                             application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+                                             application/vnd.ms-excel, .png, .jpeg,">
+                                    <label class="custom-file-label" id="imgFile" for="proImg">Choose file</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="email" class="form-control" name="email" id="email" th:value="${userId != null ? userId.email : ''}"
+                                           placeholder="Enter email">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="phone" id="phone" th:value="${userId != null ? userId.phone : ''}"
+                                           placeholder="Enter phone number">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="userType">User Type</label><span class="required"></span>
+                                <select class="form-control select2" name="userType" id="userType" data-placeholder="Please select user Type.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                    <option value="1">Normal User</option>
+                                    <option value="0">Admin User</option>
+
+                                    <option th:if="${action == 'update'}"
+                                            th:value="${userId != null ? userId.userType : ''}"
+                                            th:text="${userId.userType == 1} ?  'Normal User' : 'Admin User'" selected>
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="position">Position</label><span class="required"></span>
+                                <select class="form-control select2" name="position" id="position" data-placeholder="Please select position.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="department">Department</label><span class="required"></span>
+                                <select class="form-control select2" name="department" id="department" data-placeholder="Please select department.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="branch">Branch</label><span class="required"></span>
+                                <select class="form-control select2" name="branch" id="branch" data-placeholder="Please select branch.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="submit" th:if="${action != 'update'}" class="btn btn-primary" id="create">Save</button>
+                            <button type="submit" th:if="${action == 'update'}" class="btn btn-primary" id="update">Update</button>
+                            <button onclick="document.location='/users'" class="btn btn-dark" data-btn="cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<th:block layout:fragment="script">
+    <script th:src="@{/js/pages/user/create-update.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let userId = /*[[${userId}]]*/ 'userId';
+        let findNameAll = /*[[${findNameAll}]]*/ 'findNameAll';
+            // console.log(findNameAll);
+            // console.log(userId);
+        /*]]>*/
+    </script>
+</th:block>
+</body>
+</html>

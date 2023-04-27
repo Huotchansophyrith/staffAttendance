@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.staff.staffAttendance.mapper.AttnMapper">
+    <resultMap type="attnDto" id="attnResult">
+        <id property="attnSeq" column="attnSeq"/>
+        <result property="userNum" column="userNum"/>
+        <result property="attnType" column="attnType"/>
+        <result property="attnDt" column="attnDt"/>
+        <result property="createBy" column="createBy"/>
+        <result property="createBt" column="createBt"/>
+        <result property="approveBy" column="approveBy"/>
+        <result property="approveDt" column="approveDt"/>
+        <result property="userId" column="userId"/>
+    </resultMap>
+</mapper>

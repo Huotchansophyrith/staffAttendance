@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.staff.staffAttendance.mapper.DepartmentMapper">
+
+    <resultMap type="departDto" id="departResult">
+        <id property="departSeq" column="departSeq"/>
+        <result property="name" column="name"/>
+        <result property="short_name" column="short_name"/>
+        <result property="brId" column="brId"/>
+        <result property="description" column="description"/>
+        <result property="enabled" column="enabled"/>
+    </resultMap>
+
+</mapper>

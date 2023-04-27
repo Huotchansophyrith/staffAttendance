@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}"
+      th:with="dataTables=true,tree=true">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Leave</title>
+    <!--    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.1/sweetalert2.min.js" integrity="sha512-vCI1Ba/Ob39YYPiWruLs4uHSA3QzxgHBcJNfFMRMJr832nT/2FBrwmMGQMwlD6Z/rAIIwZFX8vJJWDj7odXMaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <style>
+        /*.size-box {*/
+        /*    line-height: 1.2;*/
+        /*}*/
+
+        .input-group-addon {
+            background-color: #fff;
+            border: none;
+            padding: 0;
+        }
+        .input-group-addon i {
+            font-size: 1.5rem;
+            color: #7f7f7f;
+            cursor: pointer;
+        }
+        .input-group-addon i:hover {
+            color: #333;
+        }
+
+        .datepicker {
+            box-shadow: 0 0 0.5rem rgba(0,0,0,0.3);
+        }
+        .datepicker table {
+            font-size: 0.9rem;
+        }
+        .datepicker table th,
+        .datepicker table td {
+            padding: 0.5rem;
+        }
+        .datepicker table td span.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .datepicker table td span.active:hover {
+            background-color: #0069d9;
+            color: #fff;
+        }
+
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+            border: none;
+            background: #f6f6f6;
+            font-weight: normal;
+            color: #454545;
+        }
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header mt-5">
+            <h1>Create leave</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Leave Management</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Request</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label for="user">User</label><span class="required"></span>
+                                <select class="form-control select2" name="user" id="user" data-placeholder="Please select user.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label for="typeLeave">Type Leave</label><span class="required"></span>
+                                <select class="form-control select2" name="userType" id="typeLeave" data-placeholder="Please select user Type.."
+                                        style="width: 100%;">
+                                    <option value=""></option>
+                                    <option value="Annual Leave">Annual Leave</option>
+                                    <option value="Sick Leave">Sick Leave</option>
+                                    <option value="Maternity Leave">Maternity Leave</option>
+
+                                </select>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <!--                            <div class="container">-->
+                            <div class="form-group">
+                                <label for="datepicker">Start Date</label>
+                                <div class="input-group date">
+                                    <input type="text" id="datepicker" class="form-control">
+                                    <div class="input-group-addon">
+          <span class="input-group-text" id="datepicker-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                            </div>-->
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <!--                           <div class="container">-->
+                            <div class="form-group">
+                                <label for="datepicker1">End Date</label>
+                                <div class="input-group date">
+                                    <input type="text" id="datepicker1" class="form-control">
+                                    <div class="input-group-addon">
+          <span class="input-group-text" id="datepicker-icon1">
+            <i class="fas fa-calendar-alt"></i>
+          </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                           </div>-->
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="reason">Reason</label>
+                                <div class="input-group">
+                                        <textarea class="form-control" name="description"
+                                                  id="reason" rows="5">
+                                        </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  <div class="row">
+                    <div class="col-md-12" hidden="">
+
+                        <div class="form-group">
+                            <label for="status">Status</label>
+
+                            <select class="form-control select2" name="userType" id="status" data-placeholder="Please select user Type.."
+                                    style="width: 100%;">
+                                <option selected>Approved</option>
+
+
+                            </select>
+
+
+                        </div>
+
+
+                    </div>
+
+                  </div>
+
+
+
+                    <div class="row">
+                        <div>
+                            <button th:if="${action == 'update'}" type="submit" class="btn btn-primary" id="update" data-btn="update">Update</button>
+                            <button th:if="${action != 'update'}" type="submit" class="btn btn-primary" id="create" style="" data-btn="save">Submit</button>
+                            <!--                            <button onclick="document.location='/branches/list'" class="btn btn-dark" data-btn="cancel">Cancel</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/pages/admin-reqLeave/create-update.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let username = /*[[${username}]]*/ 'username';
+        let userId = /*[[${userid}]]*/ 'userId';
+        /*]]>*/
+
+    </script>
+</th:block>
+
+</body>
+</html>

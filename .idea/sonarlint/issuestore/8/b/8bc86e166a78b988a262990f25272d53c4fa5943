@@ -1,0 +1,18 @@
+
+l	java:S116"WRename this field "FIND_SUCCESS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÉ¾÷
+m	java:S116"YRename this field "CREATE_SUCCESS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çºÅk
+s	java:S116"YRename this field "UPDATE_SUCCESS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êµíÆøÿÿÿÿ
+k	java:S116"QRename this field "EXSITS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ðåÌõùÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(õÉ¾÷
+6
+java:S1170"!Make this final field static too.(çºÅk
+<
+java:S1170"!Make this final field static too.(êµíÆøÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(ðåÌõùÿÿÿÿ
+_
+java:S1854$"=Remove this useless assignment to local variable "existUser".(Ùµ«¯þÿÿÿÿ8Ùž€¡î0
+P
+java:S1481$".Remove this unused "existUser" local variable.(Ùµ«¯þÿÿÿÿ8Úž€¡î0
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(–¤†Øþÿÿÿÿ

@@ -1,0 +1,328 @@
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link">
+        <img th:src="@{/dist/img/AdminLTELogo.png}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Staff Attendance</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                <li class="nav-item">
+                    <a th:href="@{/index}" class="nav-link active">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                        <p>
+                            Account Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    General Journal
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Login v1</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Register v1</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Forgot Password v1</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item" th:classappend="${leaveOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-clock"></i>
+                        <p>
+                            Leave Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/adminReqLeave/add" class="nav-link" th:classappend="${addActive}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Request Leave</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/adminReqLeave/list" class="nav-link" th:classappend="${listActive}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Request List</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview" th:classappend="${teamOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Team Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item" th:classappend="${branchOp}">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-building"></i>
+                                <p>
+                                    Branch
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/branches/create" class="nav-link" th:classappend="${addActive}">
+                                        <i class="nav-icon fas fa-plus-square"></i>
+                                        <p>Add</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/branches/list" class="nav-link" th:classappend="${lstActive}">
+                                        <i class="nav-icon fas fa-list-ul"></i>
+                                        <p>List</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item" th:classappend="${departOp}">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fas fa-cubes"></i>
+                                <p>
+                                    Department
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/departments/create" class="nav-link" th:classappend="${addActive}">
+                                        <i class="nav-icon fas fa-plus-square"></i>
+                                        <p>Add</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/departments" class="nav-link" th:classappend="${lstActive}">
+                                        <i class="nav-icon fas fa-list-ul"></i>
+                                        <p>List</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+<!--                        <li class="nav-item" th:classappend="${comOp}">-->
+<!--                            <a href="#" class="nav-link">-->
+<!--                                <i class="nav-icon fas fa-building"></i>-->
+<!--                                <p>-->
+<!--                                    Company-->
+<!--                                    <i class="fas fa-angle-left right"></i>-->
+<!--                                </p>-->
+<!--                            </a>-->
+<!--                            <ul class="nav nav-treeview">-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a href="/company/create" class="nav-link" th:classappend="${addActive}">-->
+<!--                                        <i class="nav-icon fas fa-plus-square"></i>-->
+<!--                                        <p>Add</p>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a href="/company" class="nav-link" th:classappend="${lstActive}">-->
+<!--                                        <i class="nav-icon fas fa-list-ul"></i>-->
+<!--                                        <p>List</p>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+
+<!--                            </ul>-->
+<!--                        </li>-->
+                        <li class="nav-item" th:classappend="${posOp}">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Position
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/positions/create" class="nav-link" th:classappend="${addActive}">
+                                        <i class="nav-icon fas fa-plus-square"></i>
+                                        <p>Add</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/positions" class="nav-link" th:classappend="${lstActive}">
+                                        <i class="nav-icon fas fa-list-ul"></i>
+                                        <p>List</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+<!--                        <li class="nav-item" th:classappend="${stfOp}">-->
+<!--                            <a href="#" class="nav-link">-->
+<!--                                <i class="nav-icon fas fa-users"></i>-->
+<!--                                <p>-->
+<!--                                    Staff-->
+<!--                                    <i class="fas fa-angle-left right"></i>-->
+<!--                                </p>-->
+<!--                            </a>-->
+<!--                            <ul class="nav nav-treeview">-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a href="/staffs/create" class="nav-link" th:classappend="${addActive}">-->
+<!--                                        <i class="nav-icon fas fa-plus-square"></i>-->
+<!--                                        <p>Add</p>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li class="nav-item">-->
+<!--                                    <a href="/staffs" class="nav-link" th:classappend="${lstActive}">-->
+<!--                                        <i class="nav-icon fas fa-list-ul"></i>-->
+<!--                                        <p>List</p>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
+
+                        <li class="nav-item" th:classappend="${userOp}">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    User
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/users/add" class="nav-link" th:classappend="${addActive}">
+                                        <i class="nav-icon fas fa-plus-square"></i>
+                                        <p>Add</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/users" class="nav-link" th:classappend="${lstActive}">
+                                        <i class="nav-icon fas fa-list-ul"></i>
+                                        <p>List</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item" th:classappend="${userGOp}">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    User Group
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/users-g/add" class="nav-link" th:classappend="${addActive}">
+                                        <i class="nav-icon fas fa-plus-square"></i>
+                                        <p>Add</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/users-g" class="nav-link" th:classappend="${lstActive}">
+                                        <i class="nav-icon fas fa-list-ul"></i>
+                                        <p>List</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item" th:classappend="${RMOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-list-ul"></i>
+                        <p>
+                            Report Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="/attn/report-staff" class="nav-link" th:classappend="${dailyReByStaffActive}">
+                                <i class="nav-icon fas fa-list-ul"></i>
+                                <p>Daily Report By Staff</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    General Journal
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Login v1</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Register v1</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Forgot Password v1</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

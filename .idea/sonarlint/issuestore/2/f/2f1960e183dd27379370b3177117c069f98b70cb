@@ -1,0 +1,7 @@
+
+r	java:S116"VRename this field "company_seq" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï×—ú8›Ï÷î0
+s	java:S116"WRename this field "company_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÀÔÜ8›Ï÷î0
+~	java:S116"]Rename this field "company_short_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×Üıãşÿÿÿÿ8œÏ÷î0
+u	java:S116"TRename this field "branch_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÌëüÿÿÿÿ8œÏ÷î0
+m	java:S116"QRename this field "adm_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ñü¼8Ï÷î0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( Õğ„8©Ï÷î0

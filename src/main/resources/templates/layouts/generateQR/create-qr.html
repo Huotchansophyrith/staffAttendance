@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate QR Code</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+
+        <section class="content-header mt-5">
+            <h1>Generate QR Code</h1>
+        </section>
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" th:value="${locationId != null ? locationId.name : '' }">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="branch" class="form-label">Name Branch</label>
+                            <select class="form-control select2 " id="branch" data-placeholder="-- Select --">
+                                <option selected value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="latitude" class="form-label">Enter latitude</label>
+                            <input type="text" class="form-control" id="latitude" name="latitude" th:value="${locationId != null ? locationId.latitude : '' }">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="longitude" class="form-label">Enter longitude </label>
+                            <input type="text" class="form-control" id="longitude" name="longitude" th:value="${locationId != null ? locationId.longitude : '' }">
+                        </div>
+                    </div>
+
+                    <div class="row p-1" style="margin-top: 10px">
+                        <button type="submit" class="btn btn-primary" id="generate">Generate QR Code</button>
+                        <button class="btn btn-danger ml-2" id="cancel">Cancel</button>
+                    </div>
+
+                    <!--                        block img QR code-->
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <div id="qrCode" style="display: none; text-align: center"></div>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/pages/generateQr/create-qr.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let locationId = /*[[${locationId}]]*/ 'locationId';
+        // console.log(location)
+        /*]]>*/
+    </script>
+</th:block>
+</body>
+</html>

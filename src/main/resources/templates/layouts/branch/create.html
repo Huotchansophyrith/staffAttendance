@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}"
+      th:with="dataTables=true,tree=true">
+<head>
+    <meta charset="UTF-8">
+    <title> Branch Management</title>
+<!--    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.1/sweetalert2.min.js" integrity="sha512-vCI1Ba/Ob39YYPiWruLs4uHSA3QzxgHBcJNfFMRMJr832nT/2FBrwmMGQMwlD6Z/rAIIwZFX8vJJWDj7odXMaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <style>
+        .size-box {
+            line-height: 1.2;
+        }
+    </style>
+
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header mt-5">
+            <h1> Add New Branch</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">Branch Management</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Add</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Branch Name</label><span class="required"></span>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" class="form-control" name="name" id="name" th:value="${branchId != null ? branchId.name : '' }"
+                                           placeholder="Enter Branch Name" required>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="address" id="address" th:value="${branchId != null ? branchId.address : '' }"
+                                           placeholder="Enter Address">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <div class="input-group">
+                                        <textarea class="form-control" name="description" th:text="${branchId != null ? branchId.description : '' }"
+                                                  id="description" rows="5">
+                                        </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <button th:if="${action == 'update'}" type="submit" class="btn btn-primary" id="update" data-btn="update">Update</button>
+                            <button th:if="${action != 'update'}" type="submit" class="btn btn-primary" id="create" style="" data-btn="save">Save</button>
+                            <button onclick="document.location='/branches/list'" class="btn btn-dark" data-btn="cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<th:block layout:fragment="script">
+    <script th:src="@{/js/pages/branch/create-update.js}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let branchId = /*[[${branchId}]]*/ 'branchId';
+        /*]]>*/
+    </script>
+</th:block>
+
+</body>
+</html>

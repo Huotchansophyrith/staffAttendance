@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.staff.staffAttendance.mapper.UserMapper">
+
+    <resultMap type="com.staff.staffAttendance.model.UserModel" id="baseResultMap">
+        <id property="userSeq" column="userSeq"/>
+        <result property="fullName" column="fullName"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="userNum" column="userNum"/>
+        <result property="userType" column="userType"/>
+        <result property="age" column="age"/>
+        <result property="gender" column="gender"/>
+        <result property="email" column="email"/>
+        <result property="phone" column="phone"/>
+        <result property="proImg" column="proImg"/>
+        <result property="proImgPath" column="proImgPath"/>
+        <result property="createDateTime" column="createDateTime"/>
+        <result property="createId" column="createId"/>
+        <result property="updateDateTime" column="updateDateTime"/>
+        <result property="updateId" column="updateId"/>
+        <result property="posId" column="posId"/>
+        <result property="brId" column="brId"/>
+        <result property="departId" column="departId"/>
+        <result property="logCount" column="logCount"/>
+        <result property="enabled" column="enabled"/>
+    </resultMap>
+
+    <select id="getUserByUsername" parameterType="java.lang.String" resultMap="baseResultMap">
+        SELECT * FROM tb_users WHERE username = #{username}
+    </select>
+
+    <select id="getUserByUsernameAndPassword" parameterType="java.lang.String" resultType="com.staff.staffAttendance.model.UserModel">
+        SELECT * FROM tb_users WHERE username = #{username} AND password = #{password}
+    </select>
+
+</mapper>
